@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import makeSearch from './actions/makeSearch';
-import Form from './containers/form';
+import './App.css'
+import Form from './containers/form'
+import { useState } from 'react'
+import ResultContainer from './containers/resultContainer'
 
-function App(props) {
+export default function App(props) {
+  // initial state for result which comes back from analytics api
+  const [result, setResult] = useState(null)
+  console.log('result', result)
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p onClick={() => props.makeSearch("yayyy you are the best")}>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Form />
+        <Form setResult={setResult} />
+        {result && <ResultContainer result={result} />}
       </header>
     </div>
-  );
+  )
 }
-
-App.defaultProps = {
-  makeSearch
-}
-
-export default App;
