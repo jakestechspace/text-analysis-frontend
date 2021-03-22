@@ -1,23 +1,22 @@
 import { useState } from "react"
-import makeSearch from '../actions/makeSearch';
+import makeSearch from '../actions/makeSearch'
 
 import { FormInput } from "../components/formInput"
 import { SubmitButton } from "../components/submitButton"
 
-function Form() {
+function Form({ setResult }) {
   // initial state for user entered text
-  const [enteredText, setText] = useState("");
-
-  // initial state for result which comes back from analytics api
-  const [result, setResult] = useState(null);
+  const [enteredText, setText] = useState("")
 
   const submitForm = async (e) => {
     // prevent page reload on form submit
     e.preventDefault()
 
     // await makeSearch promise and save result in variable
-    const result = await makeSearch(enteredText);
-    console.log(result);
+    const result = await makeSearch(enteredText)
+
+    // pass result up to App component
+    setResult(result)
   }
 
   return (
@@ -34,4 +33,4 @@ Form.defaultProps = {
   makeSearch
 }
 
-export default Form;
+export default Form
