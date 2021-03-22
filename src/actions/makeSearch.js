@@ -8,5 +8,5 @@ export default async function makeSearch(text) {
   }
   return fetch('https://text-analysis-backend.herokuapp.com/sentiment', options)
     .then(response => response.json())
-    .then(data => data);  
+    .then(data => data)
 }
