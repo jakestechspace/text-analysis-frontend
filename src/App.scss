@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  background-color: #efefef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#inputForm {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+button {
+  padding: 8px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.result-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+textarea {
+  padding: 10px;
+}
+
+.clear-results {
+  align-self: flex-start;
+  padding-left: 11%;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.results {
+  width: 30%;
+  border: 2px solid;
+  margin: 13px;
+
+  p, span {
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .text, .sentiment {
+    padding: 13px 11px;
+  }
+  .sentiment {
+    font-weight: bold;
+
+    &.positive {
+      color: #03C03C;
+    }
+
+    &.negative {
+      color: red;
+    }
+  }
+}
+
+.score-container {
+  // width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 6px 7px;
+  border-top: 2px dotted #000;
+  background-color: skyblue;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin: 0;
+  }
+
+  p, span {
+    font-size: 16px;
+  }
+}
