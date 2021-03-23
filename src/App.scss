@@ -10,18 +10,27 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 10px 0;
 }
 
 #inputForm {
+  width: 80%;
+  max-width: 650px;
+  text-align: left;
+
   form {
     display: flex;
     flex-direction: column;
+  }
+  span {
+    display: inline-block;
+    margin-bottom: 5px;
   }
 }
 
 button {
   padding: 8px;
-  margin-top: 18px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -30,26 +39,12 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 80%;
-}
-
-textarea {
-  padding: 10px;
-}
-
-.clear-results {
-  align-self: flex-start;
-  padding-left: 11%;
-  font-size: 20px;
-  cursor: pointer;
-
-  &:hover {
-    font-weight: bold;
-  }
+  width: 100%;
 }
 
 .results {
-  width: 30%;
+  width: 60%;
+  max-width: 275px;
   border: 2px solid;
   margin: 13px;
 
@@ -64,6 +59,7 @@ textarea {
   .text, .sentiment {
     padding: 13px 11px;
   }
+
   .sentiment {
     font-weight: bold;
 
@@ -74,6 +70,21 @@ textarea {
     &.negative {
       color: red;
     }
+  }
+}
+
+textarea {
+  padding: 10px;
+}
+
+.clear-results {
+  align-self: flex-start;
+  padding-left: 11%;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
   }
 }
 

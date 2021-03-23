@@ -3,7 +3,6 @@ export const FormInput = ({ setText }) => {
     <textarea
       onChange={(e) => setText(e.target.value)}
       rows="8"
-      cols="75"
     />
   )
 }
