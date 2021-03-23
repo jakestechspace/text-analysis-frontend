@@ -12,11 +12,8 @@ function Form({ setResult }) {
     // prevent page reload on form submit
     e.preventDefault()
 
-    // await makeSearch promise and save result in variable
-    const result = await makeSearch(enteredText)
-
     // pass result up to App component
-    setResult(result)
+    setResult(await makeSearch(enteredText))
   }
 
   return (
