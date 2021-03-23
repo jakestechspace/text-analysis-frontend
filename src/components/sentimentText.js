@@ -3,7 +3,7 @@ export const SentimentText = ({ text, sentiment }) => {
     <>
       <p className="text">{text}</p>
       <span>is</span>
-      <p className="sentiment">{sentiment}</p>
+      <p className={`sentiment ${sentiment}`}>{sentiment}</p>
     </>
   )
 }
