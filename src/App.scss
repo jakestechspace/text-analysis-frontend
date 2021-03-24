@@ -109,4 +109,8 @@ textarea {
   p, span {
     font-size: 16px;
   }
+
+  &.max {
+    font-weight: bold;
+  }
 }
