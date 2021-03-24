@@ -1,4 +1,5 @@
 export const SentimentScore = ({ confidenceScores }) => {
+  // [ [ 'positive', 0.56 ], [ 'neutral', 0.32 ], [ 'negative', 0.12 ] ]
   const getEntries = Object.entries(confidenceScores);
 
   // array of scores, ex: [.56, .32, .11]
