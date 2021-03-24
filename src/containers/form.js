@@ -4,7 +4,7 @@ import makeSearch from '../actions/makeSearch'
 import { FormInput } from "../components/formInput"
 import { SubmitButton } from "../components/submitButton"
 
-function Form({ setResult }) {
+function Form({ analyzeText, setResult }) {
   // initial state for user entered text
   const [enteredText, setText] = useState("")
 
@@ -16,7 +16,7 @@ function Form({ setResult }) {
     e.preventDefault()
 
     // pass result up to App component
-    setResult(await makeSearch(enteredText, setLoading))
+    setResult(await analyzeText(enteredText, setLoading))
   }
 
   return (
@@ -31,7 +31,7 @@ function Form({ setResult }) {
 }
 
 Form.defaultProps = {
-  makeSearch
+  analyzeText: makeSearch
 }
 
 export default Form
