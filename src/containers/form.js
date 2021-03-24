@@ -11,19 +11,12 @@ function Form({ setResult }) {
   // initial state for loading
   const [isLoading, setLoading] = useState(false)
 
-
   const submitForm = async (e) => {
     // prevent page reload on form submit
     e.preventDefault()
 
-    // loading on
-    setLoading(true)
-
     // pass result up to App component
-    setResult(await makeSearch(enteredText))
-
-    // loading off
-    setLoading(false)
+    setResult(await makeSearch(enteredText, setLoading))
   }
 
   return (
@@ -31,7 +24,7 @@ function Form({ setResult }) {
       <span>{isLoading ? "Loading..." : "Enter some text"}</span>
       <form onSubmit={(e) => submitForm(e)}>
         <FormInput setText={setText} />
-        <SubmitButton />
+        <SubmitButton disabled={isLoading} />
       </form>
     </div>
   )
